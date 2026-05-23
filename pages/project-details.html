@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detailed Project Files | Chandan Vishwakarma</title>
+  
+  <!-- Apple typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/style.css" />
+  <script>
+    // Immediate theme setter
+    (function() {
+      const storedTheme = localStorage.getItem("portfolio-theme") || "dark";
+      document.documentElement.setAttribute("data-theme", storedTheme);
+    })();
+  </script>
+  
+  <style>
+    /* Details-specific decorative layout tweaks */
+    .details-page-wrapper {
+      padding: 130px 0 100px 0;
+      min-height: 100vh;
+    }
+    .back-btn-row {
+      margin-bottom: 2rem;
+    }
+    .details-layout-grid {
+      display: grid;
+      grid-template-columns: 2.5fr 1.5fr;
+      gap: 3rem;
+    }
+    .project-doc-block {
+      padding: 40px;
+      margin-bottom: 2.5rem;
+    }
+    .meta-spec-list {
+      list-style-type: none;
+    }
+    .meta-spec-list li {
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+    }
+    .meta-spec-lbl {
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+    .meta-spec-val {
+      font-weight: 600;
+    }
+    .inline-code-box {
+      background: var(--terminal-bg);
+      border: 1px solid var(--border-color);
+      color: #a7f3d0;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 991px) {
+      .details-layout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow -->
+  <div class="ambient-glow" id="glow-1"></div>
+  <div class="ambient-glow" id="glow-2"></div>
+
+  <!-- SIMPLE STICKY HEADER -->
+  <header class="navbar-wrapper scrolled">
+    <div class="container navbar-container">
+      <a href="/#home" class="nav-logo">
+        <span class="logo-accent">&lt;</span>CV<span class="logo-accent">.data /&gt;</span>
+      </a>
+      <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
+        <!-- Light/Dark Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="/#projects" class="btn btn-secondary text-xs" style="border-radius:30px; padding: 8px 18px;">
+          &larr; Back to Portfolio
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="page-content details-page-wrapper">
+    <div class="container">
+      
+      <!-- Back Link -->
+      <div class="back-btn-row">
+        <a href="/#projects" class="btn btn-secondary text-xs" style="padding: 10px 20px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Return to Hub Home
+        </a>
+      </div>
+
+      <div class="details-layout-grid">
+        
+        <!-- MAIN DETAILED SECTION -->
+        <div class="main-details-content">
+          
+          <!-- PROJECT 1 DOCUMENT -->
+          <article class="project-doc-block glassmorphism" id="electricity-pricing-doc">
+            <span class="section-label">PROJECT FILE // 01</span>
+            <h1 class="font-gt font-bold mt-1 text-gradient" style="font-size: 2.25rem; line-height: 1.2;">
+              Electricity Price Forecasting using Machine Learning
+            </h1>
+            <p class="text-muted font-mono text-xs mt-1">Status: PRODUCTION DEPLOYED | Compiled &amp; Verified</p>
+            
+            <div class="divider text-left" style="margin: 1.5rem 0; width: 80px;"></div>
+
+            <p class="bio-text">
+              Predicting spot pricing structures on state level power pools is highly demanding due to sharp peak events, generation limits, seasonal temperature variables, and localized grid transmission constraints. In this project, a fully optimized end-to-end Machine Learning pipeline was constructed on <strong>112k+ rows of historical logs</strong> to forecast energy prices with severe accuracy, achieving a final validation score of <strong>7.7% MAPE</strong>.
+            </p>
+
+            <h3 class="font-gt font-semibold mt-3" style="font-size: 1.35rem; color: var(--text-color);">The Feature Engineering Pipeline</h3>
+            <p class="bio-text mt-1">
+              Data Science success lives or dies by feature clarity. I constructed a 79-dimensional logical dataset with zero target leaks:
+            </p>
+
+            <div class="inline-code-box">
+# Sample Feature Engineering Snippet
+def engineer_features(df):
+    # Cyclical Calendar Transformations
+    df['hour_sin'] = np.sin(df['Hour'] * (2 * np.pi / 24))
+    df['hour_cos'] = np.cos(df['Hour'] * (2 * np.pi / 24))
+    
+    # Lag Predictor Sequences
+    for lag in [1, 2, 24, 48]:
+        df[f'price_lag_{lag}'] = df['Price'].shift(lag)
+        
+    # Moving Statistical Window Arrays
+    df['rolling_mean_6h'] = df['Price'].shift(1).rolling(window=6).mean()
+    df['rolling_std_24h'] = df['Price'].shift(1).rolling(window=24).std()
+    
+    return df.dropna()
+            </div>
+
+            <h3 class="font-gt font-semibold mt-3" style="font-size: 1.35rem; color: var(--text-color);">Evaluated Estimators &amp; Baseline Optimization</h3>
+            <p class="bio-text mt-1">
+              A sequential baseline tree parameter was set using standard Linear Regression, generating a baseline MAPE of 18.2%. Transitioning to recursive ensembles, the metrics evolved as follows:
+            </p>
+
+            <ul class="cv-bullet-list mt-1">
+              <li><strong>Model 1: Linear Regression Baseline</strong> &rarr; 18.2% MAPE (Prone to sudden season and weather swings)</li>
+              <li><strong>Model 2: Decision Tree Regressor</strong> &rarr; 11.4% MAPE (Higher variance, overfits peak hours)</li>
+              <li><strong>Model 3: Random Forest Regressor [Optimized]</strong> &rarr; <strong>7.7% MAPE</strong> (Highest stability: handles localized weather spikes perfectly)</li>
+            </ul>
+
+            <h3 class="font-gt font-semibold mt-3" style="font-size: 1.35rem; color: var(--text-color);">Production-Grade Pipeline Blueprint</h3>
+            <p class="bio-text mt-1">
+              To guarantee seamless deployments, the clean engineering process was encapsulated in modular Scikit-learn Pipelines:
+            </p>
+            <div class="inline-code-box">
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.impute import SimpleImputer
+
+ml_pipeline = Pipeline([
+    ('imputer', SimpleImputer(strategy='median')),
+    ('scaler', StandardScaler()),
+    ('regressor', RandomForestRegressor(n_estimators=100, max_depth=15, random_state=42))
+])
+            </div>
+          </article>
+
+          <!-- PROJECT 2: WORK IN PROGRESS FILE -->
+          <article class="project-doc-block glassmorphism" id="accident-risk-doc">
+            <span class="section-label">PROJECT FILE // 02</span>
+            <h1 class="font-gt font-bold mt-1 text-gradient" style="font-size: 2.25rem; line-height: 1.2;">
+              Smart Accident Risk Classification Using Traffic &amp; Signal Data
+            </h1>
+            <p class="text-muted font-mono text-xs mt-1" style="color:#f59e0b;">Status: ACTIVE ARCHITECTURAL FORMULATION</p>
+            
+            <div class="divider text-left" style="margin: 1.5rem 0; width: 80px;"></div>
+
+            <p class="bio-text">
+              The goal is to classify hot crash nodes and map dynamic hazardous probability segments. By combining municipal GIS intersection points, vehicle capacity vectors, and traffic signal arrays, the service predicts sudden warning spikes before bottleneck incidents occur.
+            </p>
+
+            <div style="background:var(--accent-glow); border:1px dashed var(--border-focus); border-radius:12px; padding:20px; margin:20px 0;">
+              <p class="font-mono text-sm font-semibold" style="color:#f59e0b;">&delta; UNDER CONSTRUCTION &mdash; REPOSITORY PLANS ACTIVE</p>
+              <p class="text-xs text-muted mt-1">
+                Data collection stages are mapping local signal configurations. Streamlit mockup layouts are being planned for evaluation soon.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- RIGHT METADATA PANEL -->
+        <div class="details-sidebar">
+          
+          <div class="glassmorphism" style="padding: 30px; position: sticky; top: 100px;">
+            <h3 class="font-gt font-semibold mb-3" style="font-size: 1.2rem;">Pipeline Specifications</h3>
+            
+            <ul class="meta-spec-list">
+              <li>
+                <span class="meta-spec-lbl">Primary Author:</span>
+                <span class="meta-spec-val">Chandan Vishwakarma</span>
+              </li>
+              <li>
+                <span class="meta-spec-lbl">Scope Scale:</span>
+                <span class="meta-spec-val">112k+ Records</span>
+              </li>
+              <li>
+                <span class="meta-spec-lbl">Total Features:</span>
+                <span class="meta-spec-val">79 Vectors</span>
+              </li>
+              <li>
+                <span class="meta-spec-lbl">Primary Regressor:</span>
+                <span class="meta-spec-val">Random Forest Ensemble</span>
+              </li>
+              <li>
+                <span class="meta-spec-lbl">Evaluation Score:</span>
+                <span class="meta-spec-val text-blue" style="color:var(--accent-blue);">7.7% MAPE</span>
+              </li>
+              <li>
+                <span class="meta-spec-lbl">Data Visualizer:</span>
+                <span class="meta-spec-val">Streamlit Panel</span>
+              </li>
+            </ul>
+
+            <div style="margin-top: 2rem;">
+              <a href="https://github.com/chandanvishwakarmaa" target="_blank" class="btn btn-primary w-full" style="border-radius:12px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Access Source Repository
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- SMALL FOOTER -->
+  <footer class="footer-wrapper" style="padding: 40px 0;">
+    <div class="container text-center">
+      <p class="text-xs text-muted">&copy; 2026 Chandan Vishwakarma. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>

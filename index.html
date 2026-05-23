@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chandan Vishwakarma | Data Scientist & Analyst Portfolio</title>
+  
+  <!-- Apple-inspired Clean Typography: Inter & Space Grotesk & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/style.css" />
+  <script>
+    // Immediate theme setter
+    (function() {
+      const storedTheme = localStorage.getItem("portfolio-theme") || "dark";
+      document.documentElement.setAttribute("data-theme", storedTheme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Background Blur Ambient Elements (Apple Glassmorphism Canvas) -->
+  <div class="ambient-glow" id="glow-1"></div>
+  <div class="ambient-glow" id="glow-2"></div>
+  <div class="ambient-glow" id="glow-3"></div>
+
+  <!-- STICKY NAVBAR -->
+  <header class="navbar-wrapper">
+    <div class="container navbar-container">
+      <a href="#home" class="nav-logo" id="nav-logo-link">
+        <span class="logo-accent">&lt;</span>CV<span class="logo-accent">.data /&gt;</span>
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#home" class="nav-item active" id="nav-home">Home</a>
+        <a href="#about" class="nav-item" id="nav-about">About</a>
+        <a href="#skills" class="nav-item" id="nav-skills">Skills</a>
+        <a href="#projects" class="nav-item" id="nav-projects">Projects</a>
+        <a href="#resume" class="nav-item" id="nav-resume">Resume</a>
+        <a href="#faq" class="nav-item" id="nav-faq">FAQ</a>
+        <a href="#contact" class="nav-item" id="nav-contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Light/Dark Mode Switcher Toggle (Apple Style Slider) -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle Mobile Menu">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN SCROLLABLE WRAPPER -->
+  <main class="page-content">
+
+    <!-- 1. HERO SECTION -->
+    <section id="home" class="hero-section text-center">
+      <div class="container hero-container grid grid-2-cols">
+        <div class="hero-text-content">
+          <div class="badge-row">
+            <span class="opportunities-badge animate-pulse" id="opp-badge">
+              <span class="badge-dot"></span>
+              Open to Internships &amp; Junior Roles
+            </span>
+          </div>
+          <h1 class="hero-title" id="hero-title-name">Chandan Vishwakarma</h1>
+          <h2 class="hero-subtitle text-gradient" id="hero-headline">Data Scientist / Data Analyst</h2>
+          <p class="hero-tagline font-mono" id="typing-tagline">Patterns to Decisions</p>
+          
+          <p class="hero-summary text-muted">
+            Translating complex data streams into actionable pipelines and high-value decision matrices. Specialized in feature engineering, optimization, and time-series forecasting.
+          </p>
+          
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary" id="btn-hero-contact">
+              Connect With Me
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#resume" class="btn btn-secondary" id="btn-hero-resume">
+              View Resume
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual-content">
+          <!-- Interactive Apple-style Terminal Window widget -->
+          <div class="terminal-mock glassmorphism" id="terminal-widget">
+            <div class="terminal-header">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+              <span class="terminal-title font-mono text-xs">chandan_pipeline.py</span>
+            </div>
+            <div class="terminal-body font-mono text-left" id="terminal-code">
+              <!-- Animated Python pipeline snippet filled via Javascript -->
+              <span class="line-comment"># Loading Energy Trading dataset...</span><br>
+              <span class="line-code"><span class="code-kw">import</span> pandas <span class="code-kw">as</span> pd</span><br>
+              <span class="line-code"><span class="code-kw">from</span> sklearn.ensemble <span class="code-kw">import</span> RandomForestRegressor</span><br>
+              <span class="line-code">df = pd.read_csv(<span class="code-str">"electricity_prices.csv"</span>) <span class="line-comment"># N=112k+</span></span><br>
+              <span class="line-code">df = engineer_rolling_lags(df)</span><br>
+              <span class="line-code">reg = RandomForestRegressor(max_depth=15, n_estimators=100)</span><br>
+              <span class="line-code">reg.fit(X_train, y_train)</span><br>
+              <span class="line-comment"># Evaluating performance metrics...</span><br>
+              <span class="line-code">mape = calculate_mape(y_test, y_pred)</span><br>
+              <span class="line-code"><span class="code-kw">print</span>(<span class="code-str">f"Electricity Price Forecast MAPE: {mape}%"</span>)</span><br>
+              <span class="line-output">>> Electricity Price Forecast MAPE: 7.7% [OPTIMAL]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scroll-down">
+        <a href="#about" aria-label="Scroll to About Me Section">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="bounce"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT ME SECTION -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-label">01 // Profile</span>
+          <h2 class="section-title">The Scientific Mindset</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="about-grid grid grid-2-cols items-center gap-3">
+          <div class="about-illustration" id="about-svg-box">
+            <!-- Sleek inline SVG reflecting ML pipeline mapping -->
+            <svg class="pipeline-illustration" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="130" height="70" rx="12" fill="var(--glass-bg)" stroke="var(--border-color)" stroke-width="1.5"/>
+              <text x="85" y="55" dominant-baseline="middle" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="var(--text-color)">Raw Data (112k+)</text>
+              
+              <rect x="250" y="20" width="130" height="70" rx="12" fill="var(--glass-bg)" stroke="var(--border-color)" stroke-width="1.5"/>
+              <text x="315" y="55" dominant-baseline="middle" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="var(--text-color)">Feature Eng.</text>
+
+              <rect x="135" y="180" width="130" height="70" rx="12" fill="var(--glass-bg)" stroke="var(--accent-glow)" stroke-width="2"/>
+              <text x="200" y="215" dominant-baseline="middle" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="var(--text-color)">Random Forest</text>
+
+              <!-- Connection Arrows -->
+              <path d="M 150 55 H 250" stroke="var(--accent-blue)" stroke-width="2" stroke-dasharray="4 4"/>
+              <path d="M 315 90 V 135 H 200 V 180" stroke="var(--accent-blue)" stroke-width="2"/>
+              <path d="M 85 90 V 135 H 200" stroke="var(--border-color)" stroke-width="1" stroke-dasharray="2 2"/>
+
+              <!-- Metrics -->
+              <circle cx="200" cy="135" r="4" fill="var(--accent-blue)" class="animate-pulse"/>
+              <text x="220" y="131" font-family="Inter" font-size="11" fill="var(--text-muted)">Lag &amp; Rolling windows</text>
+              
+              <rect x="300" y="200" width="80" height="35" rx="8" fill="var(--accent-glow)" stroke="var(--accent-blue)" stroke-width="1" />
+              <text x="340" y="218" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk" font-size="12" font-weight="700" fill="var(--accent-blue)">7.7% MAPE</text>
+            </svg>
+          </div>
+
+          <div class="about-bio-panel">
+            <h3 class="subsection-title">Chandan Vishwakarma</h3>
+            <p class="bio-text">
+              I am an aspiring entry-level <strong>Data Scientist</strong> with hands-on proficiency in building robust machine learning pipelines, optimizing model metrics, and converting raw datasets into tactical decisions.
+            </p>
+            <p class="bio-text">
+              My philosophy treats unstructured or high-volume datasets as networks of hidden signals. By leveraging Python, custom ML algorithms, and rigorous statistical validation, I work across the full lifecycle of data: from writing cleaning workflows and performing deep exploratory analysis, to architecting features, model fitting, and displaying real-time predictions via Streamlit interfaces.
+            </p>
+            
+            <div class="about-highlights-grid">
+              <div class="bio-badge">
+                <span class="bio-badge-num">112k+</span>
+                <span class="bio-badge-lbl">Rows Managed</span>
+              </div>
+              <div class="bio-badge">
+                <span class="bio-badge-num">7.7%</span>
+                <span class="bio-badge-lbl">MAPE Score</span>
+              </div>
+              <div class="bio-badge">
+                <span class="bio-badge-num">79</span>
+                <span class="bio-badge-lbl">Features Engineered</span>
+              </div>
+              <div class="bio-badge">
+                <span class="bio-badge-num">100%</span>
+                <span class="bio-badge-lbl">End-To-End Pipetree</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SKILLS SECTION -->
+    <section id="skills" class="section bg-light-gray">
+      <div class="container">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-label">02 // Capabilities</span>
+          <h2 class="section-title">Core Skills &amp; Stack</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="skills-grid" id="skills-grid-container">
+          <!-- Skill Category 1: Programming & Core ML -->
+          <div class="skill-card-group glassmorphism">
+            <div class="card-group-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+            </div>
+            <h3 class="skill-group-title">Programming &amp; Core Data</h3>
+            <ul class="skill-list font-mono text-sm">
+              <li><span class="skill-bullet">●</span> Python <span class="skill-note">(Pandas, NumPy)</span></li>
+              <li><span class="skill-bullet">●</span> SQL <span class="skill-note">(MySQL relational databases)</span></li>
+              <li><span class="skill-bullet">●</span> Git &amp; GitHub versioning</li>
+              <li><span class="skill-bullet">●</span> Pip &amp; Virtual environments</li>
+            </ul>
+          </div>
+
+          <!-- Skill Category 2: Machine Learning Science -->
+          <div class="skill-card-group glassmorphism">
+            <div class="card-group-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3 class="skill-group-title">Machine Learning Practice</h3>
+            <ul class="skill-list font-mono text-sm">
+              <li><span class="skill-bullet">●</span> Random Forest &amp; Regressors</li>
+              <li><span class="skill-bullet">●</span> Scikit-Learn pipelines</li>
+              <li><span class="skill-bullet">●</span> Time-Series Forecasting</li>
+              <li><span class="skill-bullet">●</span> Custom Feature Engineering</li>
+            </ul>
+          </div>
+
+          <!-- Skill Category 3: Analytics & Visualization -->
+          <div class="skill-card-group glassmorphism">
+            <div class="card-group-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+            </div>
+            <h3 class="skill-group-title">Analysis &amp; Dashboards</h3>
+            <ul class="skill-list font-mono text-sm">
+              <li><span class="skill-bullet">●</span> Streamlit dynamic dashboards</li>
+              <li><span class="skill-bullet">●</span> Matplotlib &amp; Seaborn mapping</li>
+              <li><span class="skill-bullet">●</span> EDA outliers &amp; encoding</li>
+              <li><span class="skill-bullet">●</span> Exploratory business intelligence</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3B. CURRENTLY LEARNING & INTERESTS (As requested) -->
+        <div class="learning-container glassmorphism mt-3">
+          <div class="learning-header justify-between items-center flex" style="flex-wrap: wrap; gap: 10px;">
+            <div class="flex items-center gap-2">
+              <span class="pulse-indicator"></span>
+              <p class="font-mono text-sm uppercase text-blue font-semibold">Active Technical Growth Edge</p>
+            </div>
+            <div class="learning-items flex gap-2" style="flex-wrap: wrap;">
+              <span class="learning-tag">NLP (Natural Language Processing)</span>
+              <span class="learning-tag">Computer Vision</span>
+              <span class="learning-tag">MLflow Pipelines</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FEATURED ACHIEVEMENTS (Focus of Recruiter Experience) -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-label">03 // Milestones</span>
+          <h2 class="section-title">Key Performance Metrics</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="achievements-bento">
+          <!-- Big KPI Card (7.7% MAPE) -->
+          <div class="bento-item bento-accent glassmorphism text-center">
+            <span class="bento-badge">Accuracy Optimization</span>
+            <p class="bento-metric font-gt">7.7%</p>
+            <h3 class="bento-item-title">Mean Absolute Percentage Error (MAPE)</h3>
+            <p class="bento-desc txt-sm">
+              Achieved an industry-viable MAPE of 7.7% on the Electricity Price forecasting network by implementing advanced temporal profiling, significantly outperforming baseline baseline regressions.
+            </p>
+          </div>
+
+          <!-- High Volume Row Card -->
+          <div class="bento-item glassmorphism">
+            <span class="bento-badge">Scale Practice</span>
+            <p class="bento-metric font-gt text-gradient">112k+</p>
+            <h3 class="bento-item-title">Dataset Scaling</h3>
+            <p class="bento-desc txt-sm">
+              Processed a high density of 112,000+ sequential energy transaction records coupled with sub-locality weather signals without memory leaks.
+            </p>
+          </div>
+
+          <!-- Feature Engineering Card -->
+          <div class="bento-item glassmorphism">
+            <span class="bento-badge">Mathematics</span>
+            <p class="bento-metric font-gt">79</p>
+            <h3 class="bento-item-title">Engineered Predictors</h3>
+            <p class="bento-desc txt-sm">
+              Derived cyclical datetime transformations, wind-chill indexes, lag indicators, and rolling statistics to isolate temporal patterns.
+            </p>
+          </div>
+
+          <!-- End to End ML pipelines -->
+          <div class="bento-item glassmorphism text-center bento-full-width" id="bento-end-to-end">
+            <div class="bento-full-content flex justify-between items-center">
+              <div class="text-left bento-text-wrapper">
+                <span class="bento-badge">Architecture Blueprint</span>
+                <h3 class="bento-item-title-large">End-to-End Scikit-learn Pipelines</h3>
+                <p class="bento-desc md-padding">
+                  Constructed completely reproducible ML workflows combining imputation, scaling, outlier-handling, model training, and performance logging in structured pipelines to eliminate train-test target leakage.
+                </p>
+              </div>
+              <div class="blueprint-graphic font-mono text-xs">
+                Raw Log &rarr; Impute &rarr; scale() &rarr; Fit &rarr; Predict()
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FEATURED PROJECTS SECTION -->
+    <section id="projects" class="section bg-light-gray">
+      <div class="container">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-label">04 // Works</span>
+          <h2 class="section-title">Machine Learning Projects</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- PROJECT 1: Energy Electricity forecasting -->
+          <div class="project-card glassmorphism cursor-pointer" id="project-card-electricity">
+            <div class="project-header">
+              <span class="project-status-pill tag-completed">Competed Setup</span>
+              <span class="project-date font-mono">Completed</span>
+            </div>
+            <h3 class="project-card-title">Electricity Price Forecasting using Machine Learning</h3>
+            <p class="project-card-desc text-muted">
+              Predicting electricity price margins on 112k+ rows of historical energy trading and temporal weather patterns. Features a Random Forest regressor engineered with historical lag and cyclical calendar variables mapping.
+            </p>
+            <div class="project-card-stats grid grid-3-cols text-center">
+              <div class="stat-cell">
+                <span class="stat-num text-gradient">7.7%</span>
+                <span class="stat-lbl text-xs">Target MAPE</span>
+              </div>
+              <div class="stat-cell">
+                <span class="stat-num">112k+</span>
+                <span class="stat-lbl text-xs">Row Dataset</span>
+              </div>
+              <div class="stat-cell">
+                <span class="stat-num">79</span>
+                <span class="stat-lbl text-xs">ML Features</span>
+              </div>
+            </div>
+            <div class="project-tech-tags flex gap-1 font-mono text-xs" style="flex-wrap: wrap;">
+              <span class="tech-tag">Timeseries</span>
+              <span class="tech-tag font-medium highlight-tag">RandomForest</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="btn btn-secondary text-xs" onclick="openProjectModal('electricity')">
+                View Deep Insights
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+              <a href="https://github.com/chandanvishwakarmaa" target="_blank" class="btn btn-text text-xs" style="margin-left:auto; display:inline-flex; align-items:center; gap:4px;" onclick="event.stopPropagation();">
+                GitHub 
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: Smart Accident Risk Classification (UNDER DEVELOPMENT) -->
+          <div class="project-card glassmorphism cursor-pointer" id="project-card-accident">
+            <div class="project-header">
+              <span class="project-status-pill tag-progress">In Progress</span>
+              <span class="project-date font-mono">Development Active</span>
+            </div>
+            <h3 class="project-card-title">Smart Accident Risk Classification Using Traffic &amp; Signal Data</h3>
+            <p class="project-card-desc text-muted">
+              Engineering spatial-temporal graph vectors dynamically linked with regional signal cycles. Optimizing classification models to highlight danger indices and active bottleneck vectors contextually.
+            </p>
+            <div class="project-card-stats grid grid-3-cols text-center">
+              <div class="stat-cell">
+                <span class="stat-num text-muted">Pending</span>
+                <span class="stat-lbl text-xs">F1 Metric</span>
+              </div>
+              <div class="stat-cell">
+                <span class="stat-num text-muted">Spatial</span>
+                <span class="stat-lbl text-xs">Coordinates</span>
+              </div>
+              <div class="stat-cell">
+                <span class="stat-num text-muted">Active</span>
+                <span class="stat-lbl text-xs">Traffic Logs</span>
+              </div>
+            </div>
+            <div class="project-tech-tags flex gap-1 font-mono text-xs" style="flex-wrap: wrap;">
+              <span class="tech-tag">Classification</span>
+              <span class="tech-tag">Sensory Hub</span>
+              <span class="tech-tag">GIS Mapping</span>
+              <span class="tech-tag">Under Construction</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="btn btn-secondary text-xs" onclick="openProjectModal('accident')">
+                View Construction Plan
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </button>
+              <span class="status-indicator-wip text-xs font-mono text-muted">WIP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-3">
+          <!-- Supporting secondary redirect to the requested file path structure! -->
+          <a href="/pages/project-details.html" class="btn btn-secondary" style="border-radius: 40px; padding: 12px 24px; font-size: 14px;">
+            Open Unified Projects Page
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. RESUME PREVIEW SECTION WITH PDF REPLICA -->
+    <section id="resume" class="section">
+      <div class="container">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-label">05 // Document</span>
+          <h2 class="section-title">Professional Resume</h2>
+          <p class="section-desc">Interactive, pixel-perfect layout precisely mapping the physical resume credentials.</p>
+          <div class="divider"></div>
+        </div>
+
+        <!-- RESUME CARD CONTROL UNIT -->
+        <div class="resume-controls-bar glassmorphism">
+          <div class="flex items-center gap-2">
+            <span class="document-indicator font-mono text-xs">FORMAT: HTML5 DYNAMIC SHEET</span>
+          </div>
+          <div class="resume-actions-group">
+            <button class="btn btn-secondary btn-icon-only text-xs" id="btn-copy-resume" title="Copy Text Content">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span>Copy</span>
+            </button>
+            <button class="btn btn-secondary btn-icon-only text-xs" id="btn-fullscreen-resume" title="Fullscreen Document Sheet View">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+              <span>Fullscreen</span>
+            </button>
+            <button class="btn btn-primary text-xs" id="btn-download-resume" title="Download Print-Friendly Document">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download HTML Resume</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PRINT COMPLIANT PHYSICAL RESUME WRAPPER -->
+        <div class="resume-document-canvas-outer" id="resume-outer-view">
+          <div class="resume-sheet glassmorphism" id="resume-sheet-print">
+            
+            <!-- CV Header -->
+            <div class="cv-header text-center">
+              <h3 class="cv-name">CHANDAN VISHWAKARMA</h3>
+              <p class="cv-role">ENTRY LEVEL DATA SCIENTIST</p>
+              <p class="cv-meta text-muted font-mono">
+                Bengaluru, Karnataka <span class="cv-separator">|</span> 
+                <a href="mailto:chandanvishwakarma998797@gmail.com">chandanvishwakarma998797@gmail.com</a> <span class="cv-separator">|</span> 
+                <a href="tel:+919970875397">+91 9970875397</a>
+              </p>
+              <p class="cv-socials font-mono text-xs">
+                <a href="https://www.linkedin.com/in/chandanvishwakarma-datascience/" target="_blank" class="text-blue">LinkedIn</a> <span class="cv-separator">|</span> 
+                <a href="https://github.com/chandanvishwakarmaa" target="_blank" class="text-blue">GitHub</a>
+              </p>
+            </div>
+
+            <!-- Professional Summary -->
+            <div class="cv-section">
+              <h4 class="cv-section-title">Professional Summary</h4>
+              <div class="cv-line"></div>
+              <p class="cv-body-text">
+                Entry-Level Data Scientist with hands-on experience in Python, SQL, and machine learning. Built an end-to-end Electricity Price Forecasting project in the energy domain using engineered lag and rolling features on a 112k+ row dataset, achieving 7.7% MAPE – significantly improving upon baseline linear models. Skilled in feature engineering, model evaluation, and data visualization with Scikit-learn and Python. Seeking to apply predictive modeling to solve real-world business problems.
+              </p>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="cv-section">
+              <h4 class="cv-section-title">Technical Skills</h4>
+              <div class="cv-line"></div>
+              
+              <div class="cv-skills-columns grid grid-2-cols">
+                <div>
+                  <p class="cv-skill-cat"><strong>Programming and Databases:</strong></p>
+                  <ul class="cv-bullet-list">
+                    <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                    <li>SQL (MySQL)</li>
+                  </ul>
+                  
+                  <p class="cv-skill-cat mt-1"><strong>Machine Learning:</strong></p>
+                  <ul class="cv-bullet-list">
+                    <li>Regression, Classification, Clustering</li>
+                    <li>Random Forest, Linear Regression, Logistic Regression, KNN</li>
+                    <li>PCA, Feature Engineering, Time-Series Forecasting</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p class="cv-skill-cat"><strong>Data Visualization:</strong></p>
+                  <ul class="cv-bullet-list">
+                    <li>Matplotlib, Seaborn, Streamlit, MS Excel, Jupyter Notebooks</li>
+                  </ul>
+                  
+                  <p class="cv-skill-cat mt-1"><strong>Tools:</strong></p>
+                  <ul class="cv-bullet-list">
+                    <li>Git, GitHub</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Data Science Project -->
+            <div class="cv-section">
+              <h4 class="cv-section-title">Data Science Project</h4>
+              <div class="cv-line"></div>
+              
+              <p class="cv-subheading"><strong>Electricity Price Forecasting using Machine Learning</strong></p>
+              <ul class="cv-bullet-list">
+                <li>Performed exploratory data analysis and preprocessing including missing-value handling and feature transformation.</li>
+                <li>Developed a time-series forecasting model to predict electricity market prices using historical trading and weather data.</li>
+                <li>Engineered lag features, rolling statistics, cyclical time features, and weather-based predictors on a 112k+ row dataset with 79 features.</li>
+                <li>Trained and optimized a Random Forest Regressor using hyperparameter tuning and evaluation metrics such as MAPE.</li>
+                <li>Achieved 7.7% MAPE using Random Forest, significantly improving upon the baseline Linear Regression model.</li>
+              </ul>
+            </div>
+
+            <!-- Practical Experience -->
+            <div class="cv-section">
+              <h4 class="cv-section-title">Practical Experience / Academic Work</h4>
+              <div class="cv-line"></div>
+              <ul class="cv-bullet-list">
+                <li>Built machine learning pipelines using Scikit-learn for preprocessing, training, and evaluation workflows.</li>
+                <li>Performed EDA on structured datasets including missing-value treatment, encoding, scaling, and outlier analysis.</li>
+                <li>Developed interactive Streamlit applications to visualize model outputs and analytical insights.</li>
+                <li>Practiced regression, classification, and clustering techniques on academic and practice datasets.</li>
+              </ul>
+            </div>
+
+            <!-- Education and Certifications -->
+            <div class="cv-section">
+              <h4 class="cv-section-title">Education and Certifications</h4>
+              <div class="cv-line"></div>
+              
+              <div class="grid grid-2-cols">
+                <div>
+                  <p class="cv-subheading"><strong>Education</strong></p>
+                  <p class="cv-body-text font-medium">Bachelor of Science (B.Sc.)</p>
+                  <p class="cv-meta-text text-muted">Expected Graduation: 2026</p>
+                </div>
+                <div>
+                  <p class="cv-subheading"><strong>Certifications</strong></p>
+                  <ul class="cv-bullet-list">
+                    <li>Python Certification – Aspiry</li>
+                    <li>SQL Certification – Aspiry</li>
+                    <li>Machine Learning Certification – Aspiry</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ ACCORDION SECTION -->
+    <section id="faq" class="section bg-light-gray animate-on-scroll">
+      <div class="container max-w-3xl">
+        <div class="section-header text-center mx-auto">
+          <span class="section-label">06 // Info Overview</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="faq-accordion-group">
+          <!-- Accordion 1 -->
+          <div class="faq-item glassmorphism" onclick="toggleAccordion(this)">
+            <div class="faq-trigger">
+              <h3 class="faq-question">What tools do you use in your standard pipeline workflow?</h3>
+              <span class="faq-icon-holder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </div>
+            <div class="faq-content">
+              <p class="faq-answer">
+                In my day-to-day ML pipelines, I primarily program in <strong>Python</strong>. I rely on <strong>Pandas</strong> and <strong>NumPy</strong> for deep vector analysis and feature wrangling, and check validation matrices via <strong>Scikit-Learn</strong>. For dashboard layouts and presenting interactive model interfaces, I build responsive user interfaces in <strong>Streamlit</strong>. All source files are systematically partitioned using local Git trees synced with GitHub repositories.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion 2 -->
+          <div class="faq-item glassmorphism" onclick="toggleAccordion(this)">
+            <div class="faq-trigger">
+              <h3 class="faq-question">Are you available for active internships?</h3>
+              <span class="faq-icon-holder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </div>
+            <div class="faq-content">
+              <p class="faq-answer">
+                <strong>Yes, absolutely.</strong> I am actively seeking virtual, remote, and onsite internships or junior roles starting immediately. My goals are to integrate with high-impact software, core ML research, or data intelligence groups where I can apply my dataset scale processes and feature optimization workflows.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion 3 -->
+          <div class="faq-item glassmorphism" onclick="toggleAccordion(this)">
+            <div class="faq-trigger">
+              <h3 class="faq-question">What specific domains interest you the most?</h3>
+              <span class="faq-icon-holder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </div>
+            <div class="faq-content">
+              <p class="faq-answer">
+                I am highly fascinated by <strong>Smart Utilities/Energy Markets</strong> (where I applied my 112k+ row Price forecasting models), <strong>Intelligent Logistics and Routing networks</strong> (mapping GIS spatial-temporal matrices), and <strong>Financial forecasting</strong>. My analytical drive thrives in any context requiring finding signals in high-dimensional, time-sequenced streams.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion 4 -->
+          <div class="faq-item glassmorphism" onclick="toggleAccordion(this)">
+            <div class="faq-trigger">
+              <h3 class="faq-question">Do you work on end-to-end Machine Learning pipelines?</h3>
+              <span class="faq-icon-holder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </div>
+            <div class="faq-content">
+              <p class="faq-answer">
+                Yes. I formulate structured pipelines rather than scripting isolated components. This includes creating deterministic imputers for missing metrics, isolated StandardScaler transformations, and optimizing estimators like Random Forest. I write modular functions to ensure there are no leakage paths between training splits and actual testing validation data.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion 5 -->
+          <div class="faq-item glassmorphism" onclick="toggleAccordion(this)">
+            <div class="faq-trigger">
+              <h3 class="faq-question">Are you open to relocation or remote opportunities?</h3>
+              <span class="faq-icon-holder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </div>
+            <div class="faq-content">
+              <p class="faq-answer">
+                I am fully open to both relocation across key software sectors and remote work arrays. I am comfortable collaborating across distributed teams utilizing standard Agile models.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONTACT SECTION & SOCIAL HUB -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header text-center max-w-2xl mx-auto">
+          <span class="section-label">07 // Collaboration</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-desc">Have a question or looking to recruit? Drop a query below directly into my pipeline.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="contact-grid grid grid-2-cols gap-3 items-start">
+          
+          <!-- Contact Details Card -->
+          <div class="contact-details-panel glassmorphism">
+            <h3 class="subsection-title">Direct Contacts</h3>
+            <p class="text-muted md-padding-bottom text-sm">
+              Feel free to initiate correspondence anytime. I actively respond within 12 business hours.
+            </p>
+
+            <div class="contact-list flex flex-col gap-2">
+              <div class="contact-detail-item">
+                <div class="icon-circle bg-blue-glow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <h4 class="contact-lbl">Email Address</h4>
+                  <a href="mailto:chandanvishwakarma998797@gmail.com" class="contact-val hover-link">chandanvishwakarma998797@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="icon-circle bg-blue-glow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <h4 class="contact-lbl">Primary Line</h4>
+                  <a href="tel:+919970875397" class="contact-val hover-link">+91 9970875397</a>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="icon-circle bg-blue-glow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <h4 class="contact-lbl">Current Location</h4>
+                  <span class="contact-val font-mono">Bengaluru, Karnataka, India</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media Hub Links -->
+            <div class="social-links-grid">
+              <a href="https://github.com/chandanvishwakarmaa" target="_blank" class="social-badge" title="GitHub Repository Hub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+              </a>
+
+              <a href="https://www.linkedin.com/in/chandanvishwakarma-datascience/" target="_blank" class="social-badge" title="LinkedIn Professional Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+
+              <a href="mailto:chandanvishwakarma998797@gmail.com" class="social-badge" title="Direct Mail Pipeline">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+              </a>
+
+              <a href="#home" class="social-badge" title="Technical Blog Portfolio">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Tech Blog
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form Panel -->
+          <form class="contact-form glassmorphism" id="portfolio-contact-form" onsubmit="handleFormSubmit(event)">
+            <!-- Paste your free Web3Forms access key from https://web3forms.com in the value attribute below to receive real-time email alerts -->
+            <input type="hidden" name="access_key" value="77a5f0c7-b1ca-47a3-ad0c-c806832b66d5">
+
+            <h3 class="subsection-title">Send message to Chandan</h3>
+            
+            <div class="form-feedback-banner hidden" id="form-success-alert">
+              <span class="icon-success">&check;</span> Message processed successfully! Your details are stored in the temporary stream.
+            </div>
+
+            <div class="form-row text-left">
+              <label for="form-name" class="form-label font-mono text-xs">Full Name <span class="req">*</span></label>
+              <input type="text" id="form-name" required class="form-input" placeholder="e.g. Hiring Manager" />
+            </div>
+
+            <div class="form-row text-left">
+              <label for="form-email" class="form-label font-mono text-xs">Your Email Address <span class="req">*</span></label>
+              <input type="email" id="form-email" required class="form-input" placeholder="e.g. recruiter@company.com" />
+            </div>
+
+            <div class="form-row text-left">
+              <label for="form-message" class="form-label font-mono text-xs">Enter Message <span class="req">*</span></label>
+              <textarea id="form-message" required class="form-textarea" rows="5" placeholder="Write details regarding internship timelines or core roles..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full" id="btn-submit-contact">
+              Send Email
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 9. FOOTER -->
+  <footer class="footer-wrapper">
+    <div class="container footer-container text-center">
+      <div class="footer-logo font-mono text-sm">
+        &lt;CHANDAN VISHWAKARMA /&gt;
+      </div>
+      <p class="footer-text font-sans text-xs text-muted">
+        Apple portfolio layout engineered in clean, ultra-scalable Semantic HTML5, CSS standard &amp; lightweight Vanilla Javascript.
+      </p>
+      
+      <!-- Real-time dynamic clock tracking metric (re-evaluated by JS) -->
+      <div class="clock-metric-badge font-mono text-xs" id="clock-footer">
+        TIMESTAMP NODE: <span class="clock-time" id="clock-stream-time">2026-05-21 03:33:50 UTC</span>
+      </div>
+
+      <p class="copyright-term text-xs text-muted">
+        &copy; 2026 Chandan Vishwakarma. Built for performance.
+      </p>
+    </div>
+  </footer>
+
+  <!-- 10. FLOATING WHATSAPP CHAT BUTTON (Dynamic visibility scrolling near bottom) -->
+  <a href="https://wa.me/919970875397?text=Hi%20Chandan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20internship%20or%20entry-level%20opportunities." 
+     target="_blank" class="whats-floating-btn" id="wa-sticky-bubble" aria-label="Connect on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="wa-icon"><path d="M12.004 0C5.39 0 0 5.39 0 12.004c0 2.115.55 4.17 1.595 5.98L.004 24l6.16-1.615A11.91 11.91 0 0 0 12.004 24c6.61 0 12-5.39 12-12.004S18.614 0 12.004 0zM12 21.933a9.9 9.9 0 0 1-5.06-1.383l-.363-.216-3.765.987 1.005-3.666-.237-.376A9.914 9.914 0 0 1 2.067 12a9.94 9.94 0 0 1 9.933-9.933 9.94 9.94 0 0 1 9.933 9.933s-5.334 9.933-11.933 9.933zm4.587-6.289c-.25-.126-1.488-.734-1.719-.817-.23-.083-.398-.125-.566.126-.168.25-.65.817-.797.984-.147.168-.293.189-.544.063-.25-.126-1.057-.39-2.013-1.242-.744-.664-1.247-1.484-1.393-1.734-.147-.25-.015-.386.11-.51.114-.112.25-.292.376-.438.126-.146.168-.25.25-.417.085-.167.043-.313-.02-.438-.064-.125-.567-1.36-.777-1.865-.205-.49-.413-.424-.567-.431-.147-.007-.315-.007-.483-.007s-.44.062-.672.312c-.23.25-.88.86-.88 2.094 0 1.235.897 2.428 1.023 2.595.125.167 1.764 2.693 4.274 3.778.597.258 1.063.412 1.427.527.6-.19 1.147-.245 1.58-.31.482-.072 1.486-.607 1.685-1.192.199-.584.199-1.085.14-1.19-.06-.104-.219-.167-.47-.293z"/></svg>
+    <span class="wa-label text-xs font-semibold">Message Chandan</span>
+  </a>
+
+  <!-- 11. MODAL COMPONENT (Dynamic detail overlay for high completeness) -->
+  <div class="modal-root hidden" id="details-modal" onclick="closeProjectModalOnBgClick(event)">
+    <div class="modal-dialog glassmorphism animate-scale">
+      <div class="modal-header-nav">
+        <span class="modal-path font-mono text-xs" id="modal-path-text">projects / electricity-forecasting.json</span>
+        <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close dialog modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Detailed Project Markup (will be populated dynamically via JavaScript) -->
+      <div id="modal-dynamic-body" class="modal-body-content">
+        <!-- Content gets loaded here dynamically based on project selection -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
